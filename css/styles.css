@@ -150,17 +150,37 @@ ul{margin:0;padding:0;list-style:none}
   z-index:2;
   max-width:1220px;
   margin:0 auto;
-  padding:0 clamp(18px,5vw,56px);
+  padding:80px clamp(18px,5vw,56px) 0;
 }
 
 .navbar{
+  position:fixed;
+  top:0;
+  left:0;
+  right:0;
   display:flex;
   align-items:center;
   justify-content:space-between;
   gap:20px;
   flex-wrap:wrap;
-  padding:22px 0;
+  padding:22px clamp(18px,5vw,56px);
+  background:linear-gradient(180deg,rgba(47,29,18,.95) 0%,rgba(47,29,18,.85) 100%);
+  z-index:50;
+  backdrop-filter:blur(8px);
 }
+
+.logo-badge{
+    display: flex;
+    align-items: center;
+}
+
+.logo-badge img{
+    width: 80px;
+    height: auto;
+    display: block;
+}
+
+/*
 .brand{
   display:flex;
   align-items:center;
@@ -190,7 +210,8 @@ ul{margin:0;padding:0;list-style:none}
   letter-spacing:.32em;
   text-transform:uppercase;
   opacity:.75;
-}
+}*/
+
 .nav-links{
   display:flex;
   align-items:center;
@@ -216,6 +237,7 @@ ul{margin:0;padding:0;list-style:none}
   background:var(--color-bg-light);
   color:var(--color-cta);
 }
+
 
 .postcard{
   margin:clamp(18px,4vw,46px) 0 clamp(48px,7vw,96px);
@@ -698,4 +720,370 @@ ul{margin:0;padding:0;list-style:none}
   font-family:'Faculty Glyphic',serif;
   color:var(--color-bg-light);
   font-size:16px;
+}
+
+/* ============ MEDIA QUERIES MOBILE ============ */
+@media (max-width: 768px) {
+  /* Hero y navbar */
+  .hero-inner {
+    padding: 70px clamp(12px, 4vw, 24px) 0;
+  }
+
+  .navbar {
+    padding: 16px clamp(12px, 4vw, 24px);
+    flex-wrap: nowrap;
+  }
+
+  .logo-badge img {
+    width: 60px;
+  }
+
+  .nav-links {
+    gap: clamp(8px, 1.5vw, 16px);
+  }
+
+  .nav-link {
+    font-size: 11px;
+    letter-spacing: .08em;
+  }
+
+  .nav-cta {
+    padding: 7px 14px;
+    font-size: 11px;
+  }
+
+  /* Postcard */
+  .postcard-body {
+    gap: clamp(16px, 2vw, 24px);
+    padding: clamp(16px, 3vw, 28px);
+  }
+
+  .postcard-text {
+    flex: 1 1 100%;
+    min-width: 0;
+  }
+
+  .postcard-image {
+    flex: 1 1 100%;
+    min-width: 0;
+  }
+
+  .postcard-image img {
+    min-height: clamp(200px, 50vw, 320px);
+  }
+
+  .postcard-title {
+    font-size: clamp(24px, 5vw, 40px);
+  }
+
+  .postcard-desc {
+    font-size: clamp(13px, 3.5vw, 15px);
+  }
+
+  .postcard-details {
+    gap: 16px 24px;
+    margin: 20px 0 0;
+    padding: 16px 0 0;
+  }
+
+  .detail-item {
+    min-width: 80px;
+  }
+
+  .detail-value {
+    font-size: 16px;
+  }
+
+  /* Modalidad */
+  .modalidad-inner {
+    flex-direction: column;
+    gap: clamp(20px, 3vw, 32px);
+  }
+
+  .modalidad-images {
+    flex: 1 1 100%;
+    min-width: 0;
+    width: 100%;
+  }
+
+  .modalidad-image {
+    flex: 1 1 45%;
+    min-width: 140px;
+  }
+
+  .modalidad-content {
+    flex: 1 1 100%;
+    min-width: 0;
+  }
+
+  /* Timeline */
+  .timeline {
+    padding-left: 36px;
+  }
+
+  .timeline-dot {
+    left: -35px;
+    width: 18px;
+    height: 18px;
+  }
+
+  .timeline-tag {
+    font-size: clamp(16px, 1.5vw, 20px);
+  }
+
+  /* Incluye */
+  .incluye-inner {
+    flex-direction: column;
+    gap: clamp(20px, 3vw, 32px);
+  }
+
+  .incluye-image {
+    flex: 1 1 100%;
+    min-width: 0;
+    width: 100%;
+    max-height: 320px;
+  }
+
+  .incluye-content {
+    flex: 1 1 100%;
+    min-width: 0;
+  }
+
+  .check-list {
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 12px 16px;
+  }
+
+  .check-item {
+    font-size: clamp(12px, 2.5vw, 14px);
+    gap: 10px;
+  }
+
+  /* Formulario */
+  .reservar-form {
+    padding: clamp(16px, 2.5vw, 24px);
+  }
+
+  .form-grid {
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .form-field {
+    flex: 1 1 100%;
+    min-width: 0;
+  }
+
+  .form-field input,
+  .form-field textarea {
+    font-size: 16px; /* Evita zoom en iOS */
+    padding: 10px 12px;
+  }
+
+  .btn-submit {
+    font-size: 14px;
+    padding: 14px;
+    margin-top: 16px;
+  }
+
+  /* Buttons */
+  .btn-cta {
+    padding: 14px 24px;
+    font-size: 13px;
+  }
+
+  .postcard-cta-wrap {
+    margin-top: 20px;
+  }
+
+  /* Testimonios */
+  .testimonial-card {
+    width: clamp(260px, 90vw, 320px);
+    padding: clamp(18px, 2vw, 24px);
+  }
+
+  .testimonial-quote {
+    font-size: 13px;
+    margin: 14px 0 16px;
+  }
+
+  /* Secciones */
+  .section {
+    padding: clamp(32px, 6vw, 60px) clamp(12px, 4vw, 24px);
+  }
+
+  .section-title {
+    font-size: clamp(22px, 5.5vw, 36px);
+  }
+
+  .section-heading {
+    margin-bottom: clamp(24px, 4vw, 40px);
+  }
+
+  /* Footer */
+  .site-footer {
+    padding: 24px clamp(12px, 4vw, 24px);
+    font-size: 11px;
+  }
+}
+
+@media (max-width: 480px) {
+  /* Navbar más compacta en pantallas muy pequeñas */
+  .navbar {
+    padding: 12px clamp(8px, 3vw, 16px);
+  }
+
+  .logo-badge img {
+    width: 50px;
+  }
+
+  .nav-links {
+    gap: clamp(6px, 1vw, 10px);
+  }
+
+  .nav-link {
+    font-size: 10px;
+    letter-spacing: .06em;
+  }
+
+  .nav-cta {
+    padding: 6px 10px;
+    font-size: 9px;
+  }
+
+  .hero-inner {
+    padding: 64px clamp(8px, 3vw, 16px) 0;
+  }
+
+  /* Hero más compacto */
+  .postcard-body {
+    padding: clamp(12px, 2.5vw, 20px);
+    gap: clamp(12px, 1.5vw, 16px);
+  }
+
+  .postcard-title {
+    font-size: clamp(20px, 6vw, 32px);
+    margin-top: 12px;
+  }
+
+  .postcard-desc {
+    font-size: clamp(12px, 3vw, 14px);
+    margin-top: 10px;
+  }
+
+  .postcard-details {
+    gap: 12px 18px;
+    margin: 16px 0 0;
+    padding: 12px 0 0;
+  }
+
+  .detail-item {
+    min-width: 70px;
+  }
+
+  .detail-label {
+    font-size: 9px;
+  }
+
+  .detail-value {
+    font-size: 14px;
+  }
+
+  .postcard-cta-wrap {
+    margin-top: 16px;
+  }
+
+  .btn-cta {
+    padding: 12px 18px;
+    font-size: 11px;
+    gap: 8px;
+  }
+
+  /* Timeline más compacto */
+  .timeline {
+    padding-left: 28px;
+  }
+
+  .timeline-dot {
+    left: -26px;
+    width: 16px;
+    height: 16px;
+    border: 2px solid var(--color-bg-light);
+  }
+
+  .timeline-tag {
+    font-size: clamp(14px, 1.2vw, 18px);
+  }
+
+  .timeline-text {
+    font-size: clamp(12px, 2.5vw, 14px);
+    margin-top: 6px;
+  }
+
+  /* Incluye y modalidad */
+  .check-list {
+    grid-template-columns: 1fr;
+    gap: 10px 0;
+  }
+
+  /* Formulario */
+  .reservar-form {
+    padding: clamp(12px, 2vw, 18px);
+    border-radius: 6px;
+  }
+
+  .form-field input,
+  .form-field textarea {
+    font-size: 16px;
+    padding: 10px 10px;
+  }
+
+  .btn-submit {
+    font-size: 13px;
+    padding: 12px;
+    margin-top: 12px;
+  }
+
+  /* Secciones */
+  .section {
+    padding: clamp(24px, 5vw, 48px) clamp(8px, 3vw, 16px);
+  }
+
+  .section-title {
+    font-size: clamp(18px, 5vw, 28px);
+  }
+
+  .section-heading {
+    margin-bottom: clamp(18px, 3vw, 32px);
+  }
+
+  /* Testimonios */
+  .carousel-track {
+    gap: 16px;
+    padding: 6px clamp(8px, 2vw, 16px);
+  }
+
+  .testimonial-card {
+    width: clamp(240px, 85vw, 280px);
+    padding: clamp(14px, 1.5vw, 18px);
+  }
+
+  .testimonial-quote {
+    font-size: 12px;
+    margin: 10px 0 14px;
+  }
+
+  .testimonial-author {
+    font-size: 14px;
+  }
+
+  /* Footer */
+  .site-footer {
+    padding: 18px clamp(8px, 3vw, 16px);
+    font-size: 10px;
+  }
+
+  .footer-brand {
+    font-size: 14px;
+  }
 }
