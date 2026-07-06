@@ -19,6 +19,10 @@ body{
   position:relative;
   overflow-x:hidden;
 }
+h1,h2{
+  font-family:'Bricolage Grotesque',sans-serif;
+  color:inherit;
+}
 a{color:inherit;text-decoration:none}
 img{display:block;max-width:100%}
 ul{margin:0;padding:0;list-style:none}
@@ -52,7 +56,7 @@ ul{margin:0;padding:0;list-style:none}
 }
 .section-heading{text-align:center;margin-bottom:clamp(36px,5vw,58px)}
 .section-title{
-  font-family:'Faculty Glyphic',serif;
+  font-family:'Bricolage Grotesque',sans-serif;
   color:var(--color-title);
   font-weight:400;
   font-size:clamp(28px,3.7vw,46px);
@@ -164,14 +168,24 @@ ul{margin:0;padding:0;list-style:none}
   gap:20px;
   flex-wrap:wrap;
   padding:22px clamp(18px,5vw,56px);
-  background:linear-gradient(180deg,rgba(47,29,18,.95) 0%,rgba(47,29,18,.85) 100%);
+  background: rgba(70, 28, 12, 0.25);
+  backdrop-filter: blur(10px);
   z-index:50;
   backdrop-filter:blur(8px);
+}
+
+
+.brand{
+  display:flex;
+  align-items:center;
+  margin-right:auto;
+  margin-left:0;
 }
 
 .logo-badge{
     display: flex;
     align-items: center;
+    margin-left: 0;
 }
 
 .logo-badge img{
@@ -180,7 +194,7 @@ ul{margin:0;padding:0;list-style:none}
     display: block;
 }
 
-/*
+
 .brand{
   display:flex;
   align-items:center;
@@ -210,7 +224,7 @@ ul{margin:0;padding:0;list-style:none}
   letter-spacing:.32em;
   text-transform:uppercase;
   opacity:.75;
-}*/
+}
 
 .nav-links{
   display:flex;
@@ -243,17 +257,19 @@ ul{margin:0;padding:0;list-style:none}
   margin:clamp(18px,4vw,46px) 0 clamp(48px,7vw,96px);
   background:var(--color-bg-light);
   border:1px solid rgba(89,30,25,.18);
-  border-radius:6px;
+  border-radius:0px;
   box-shadow:0 34px 70px -30px rgba(30,15,8,.7);
   position:relative;
 }
-.postcard-frame{
+
+/*.postcard-frame{
   position:absolute;
   inset:11px;
   border:1.5px dashed rgba(115,70,45,.4);
   border-radius:3px;
   pointer-events:none;
-}
+}*/
+
 .postcard-body{
   display:flex;
   flex-wrap:wrap;
@@ -268,7 +284,7 @@ ul{margin:0;padding:0;list-style:none}
   flex-direction:column;
 }
 .postcard-title{
-  font-family:'Faculty Glyphic',serif;
+  font-family:"Bricolage Grotesque", sans-serif;
   color:var(--color-title);
   font-weight:400;
   font-size:clamp(32px,4.7vw,58px);
@@ -300,9 +316,9 @@ ul{margin:0;padding:0;list-style:none}
   font-weight:700;
 }
 .detail-value{
-  font-family:'Faculty Glyphic',serif;
+  font-family:"Bricolage Grotesque", sans-serif;
   color:var(--color-title);
-  font-size:19px;
+  font-size:16px;
   margin-top:5px;
   line-height:1.15;
 }
@@ -388,10 +404,10 @@ ul{margin:0;padding:0;list-style:none}
   left:16px;top:10px;
   width:3px;
   height:0%;
-  background:var(--color-bg-light);
+  background:rgba(89,30,25,100);
   border-radius:3px;
   transition:height .18s ease-out;
-  box-shadow:0 0 14px rgba(242,221,182,.6);
+  box-shadow:0 0 14px rgba(89,30,25,.55);
 }
 .timeline-items{
   display:flex;
@@ -410,7 +426,7 @@ ul{margin:0;padding:0;list-style:none}
   width:22px;height:22px;
   border-radius:50%;
   background:#8a5730;
-  border:3px solid var(--color-bg-light);
+  border:0px solid var(--color-bg-light);
   transition:background .35s ease,box-shadow .35s ease;
   box-shadow:none;
   display:block;
@@ -420,7 +436,7 @@ ul{margin:0;padding:0;list-style:none}
   box-shadow:0 0 16px rgba(89,30,25,.55);
 }
 .timeline-tag{
-  font-family:'Faculty Glyphic',serif;
+  font-family: "Bricolage Grotesque", sans-serif;
   color:#3a1712;
   font-size:clamp(19px,2vw,26px);
   line-height:1;
@@ -637,7 +653,7 @@ ul{margin:0;padding:0;list-style:none}
   color:#e7b98f;
 }
 .reservar-title{
-  font-family:'Faculty Glyphic',serif;
+  font-family:'Bricolage Grotesque',sans-serif;
   color:var(--color-bg-light);
   font-weight:400;
   font-size:clamp(32px,4.6vw,56px);
@@ -653,8 +669,8 @@ ul{margin:0;padding:0;list-style:none}
 }
 .reservar-form{
   margin-top:clamp(34px,4vw,48px);
-  background:var(--color-bg-light);
-  border-radius:8px;
+  background:#3013089c;
+  border-radius:2px;
   padding:clamp(24px,3.4vw,44px);
   text-align:left;
   box-shadow:0 30px 60px -30px rgba(0,0,0,.7);
@@ -684,7 +700,7 @@ ul{margin:0;padding:0;list-style:none}
   font-family:'Montserrat',sans-serif;
   font-size:15px;
   color:var(--color-body-text-strong);
-  background:#fff;
+  background:rgba(89,30,25,.28);
   border:1px solid rgba(89,30,25,.28);
   border-radius:4px;
   padding:12px 14px;
